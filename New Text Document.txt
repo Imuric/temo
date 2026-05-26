@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM Web Application — Freelance Scope, Deliverables & Exact Pricing Matrix</title>
+  
+  <!-- Import Geist Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              900: '#1e3a8a',
+            },
+            slate: {
+              950: '#0f172a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Global Overrides to strictly enforce Geist */
+    * {
+      font-family: 'Geist', sans-serif !important;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Print styling to optimize export to PDF */
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .shadow-custom {
+        box-shadow: none !important;
+      }
+      .border-print {
+        border: 1px solid #cbd5e1 !important;
+      }
+    }
+    
+    .shadow-custom {
+      box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-brand-100 selection:text-brand-900 min-h-screen pb-16">
+
+  <!-- Floating Navigation Indicator for Desktop -->
+  <div class="no-print fixed bottom-6 right-6 z-50">
+    <a href="#toc" class="bg-slate-900 text-white hover:bg-brand-600 px-4 py-3 rounded-full shadow-lg text-xs font-semibold tracking-wide uppercase transition-all duration-300 flex items-center space-x-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <span>Back to Index</span>
+    </a>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    
+    <!-- DOCUMENT CONTAINER -->
+    <div class="bg-white rounded-2xl shadow-custom border border-slate-100 p-8 sm:p-12 md:p-16">
+      
+      <!-- HEADER / COVER BLOCK -->
+      <div class="border-b border-slate-100 pb-10">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider">Freelance Technical Proposal</span>
+          <span class="text-xs text-slate-400 font-medium">Doc Ref: CRM-FL-2026</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-950 tracking-tight leading-none mb-4">
+          CRM Web Application
+        </h1>
+        <p class="text-xl text-slate-500 font-light mb-6">
+          Phase 1 Scope, Deliverables, Deployment Architecture & Fixed-Cost Proposal
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-6 border-t border-slate-100 text-sm text-slate-500">
+          <div>
+            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Prepared By</p>
+            <p class="font-semibold text-slate-800 mt-1">Independent Freelance Consultant</p>
+          </div>
+          <div>
+            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Project Timeline</p>
+            <p class="font-semibold text-slate-800 mt-1">10 Weeks (Fixed Term)</p>
+          </div>
+          <div>
+            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Total Development Cost</p>
+            <p class="font-semibold text-brand-600 mt-1">₹4,80,000 (Fixed Price)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INDEX / TABLE OF CONTENTS -->
+      <div id="toc" class="mt-10 p-6 bg-slate-50 rounded-xl border border-slate-100">
+        <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"></path></svg>
+          Document Index
+        </h3>
+        <nav class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+          <a href="#objective" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">01.</span> <span>Project Mission & Objectives</span>
+          </a>
+          <a href="#scope" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">02.</span> <span>Functional Scope & Modules</span>
+          </a>
+          <a href="#discount-logic" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">03.</span> <span>Discount & Workflow Hierarchy</span>
+          </a>
+          <a href="#tax-system" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">04.</span> <span>Taxation Logic & Pricing Rules</span>
+          </a>
+          <a href="#architecture" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">05.</span> <span>Technical Stack & Architecture</span>
+          </a>
+          <a href="#timeline" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">06.</span> <span>Phase-wise Roadmap Breakdown</span>
+          </a>
+          <a href="#deliverables" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">07.</span> <span>Concrete System Deliverables</span>
+          </a>
+          <a href="#pricing" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">08.</span> <span>Fixed Development Investment</span>
+          </a>
+          <a href="#running-costs" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">09.</span> <span>Operational Running Costs & AMC</span>
+          </a>
+          <a href="#exclusions" class="text-slate-600 hover:text-brand-600 font-medium flex items-center space-x-2 transition-colors">
+            <span class="text-slate-300 font-mono">10.</span> <span>Explicit Exclusions (Phase 2)</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- SECTION 1: OBJECTIVE -->
+      <section id="objective" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-4">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">01</span>
+          Project Objective & Vision
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          This document represents a professional, freelance delivery proposal for the custom development of an enterprise-grade CRM Web Application. Operating as an independent technical contractor, I will build and configure a unified platform to automate your sales cycle, stabilize calculation accuracy, establish role-based pricing authority, and secure active material inventories from manual calculation leakages.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          <div class="p-5 bg-slate-50 border border-slate-200 rounded-xl">
+            <h4 class="font-bold text-slate-950 text-sm mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+              Web-Based Mobile Responsive UI
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              This system is built as a pure, high-performance web-based application (not a native app store deployment), removing store update friction. The design features a fully responsive, fluid grid interface built using custom CSS structures that optimize visual density and key interactive operations across modern smart devices, tablets, and desktop workstations.
+            </p>
+          </div>
+          
+          <div class="p-5 bg-slate-50 border border-slate-200 rounded-xl">
+            <h4 class="font-bold text-slate-950 text-sm mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-500"></span>
+              Future Scalability & Interoperability
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Engineered with clean model-view isolation, this database structure can be seamlessly scaled into a comprehensive, large-scale CRM, ERP, and HRMS platform. Additionally, all API channels are designed with RESTful compliance standards, permitting the database to serve as a high-integrity core seed provider to feed other downstream systems running your organization.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-brand-50 border border-brand-100 rounded-xl p-5 text-slate-700 flex items-start gap-4">
+          <svg class="w-6 h-6 text-brand-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div>
+            <h4 class="font-bold text-slate-900 mb-1">Freelance Delivery Commitment</h4>
+            <p class="text-sm text-slate-600">This solution is customized specifically for your IT operations. It ensures complete architectural sovereignty—meaning you receive full source ownership, organized documentation, and a clean, production-ready release directly on your hosting environment.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: PROJECT SCOPE & MODULES -->
+      <section id="scope" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">02</span>
+          Functional Scope & Module Deliverables
+        </h2>
+        
+        <div class="space-y-6">
+          <!-- Module Card: Quotation -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="p-2 rounded-lg bg-white text-brand-600 border border-slate-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              </span>
+              <h3 class="text-base font-bold text-slate-900">Quotation Engine</h3>
+            </div>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-600 pl-4 list-disc">
+              <li>Dynamic real-time configuration matrices</li>
+              <li>Multi-material configuration variables</li>
+              <li>Polished / Unpolished pricing selectors</li>
+              <li>Dual measurement systems (mm, cm, inch)</li>
+              <li>Dynamic tax adjustments & multi-tier tax views</li>
+              <li>Automated PDF generator & direct share scripts</li>
+              <li>One-tap WhatsApp & Email sharing triggers</li>
+              <li>Revision versioning and draft logs</li>
+            </ul>
+          </div>
+
+          <!-- Module Card: Clients -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="p-2 rounded-lg bg-white text-brand-600 border border-slate-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              </span>
+              <h3 class="text-base font-bold text-slate-900">Client Management (CRM Master)</h3>
+            </div>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-600 pl-4 list-disc">
+              <li>Detailed client profiles with structured metadata</li>
+              <li><strong>Active / Inactive Status Management:</strong> Dynamic state toggles to instantly suspend or activate profiles without database deletions</li>
+              <li>Real-time GSTIN validation via direct API integrations</li>
+              <li>Historical quote generation registries</li>
+              <li>Dynamic shipping & billing multi-address fields</li>
+              <li>Customer contact logging and follow-up activities</li>
+              <li>Interactive notes for account modifications</li>
+            </ul>
+          </div>
+
+          <!-- Module Card: Inventory -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="p-2 rounded-lg bg-white text-brand-600 border border-slate-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+              </span>
+              <h3 class="text-base font-bold text-slate-900">Inventory Ledger System</h3>
+            </div>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-600 pl-4 list-disc">
+              <li>Itemized SKU creation with detailed categories</li>
+              <li>Single-unit resolution stock tracking (Nos)</li>
+              <li>Automatic lock/reduction workflow upon quote validation</li>
+              <li>Detailed transaction history for stock modifications</li>
+              <li>Color-coded indicators for low stock alerts</li>
+            </ul>
+          </div>
+
+          <!-- Module Card: Access Controls & Dashboard -->
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="p-2 rounded-lg bg-white text-brand-600 border border-slate-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+              </span>
+              <h3 class="text-base font-bold text-slate-900">Employee & User Management (RBAC)</h3>
+            </div>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-slate-600 pl-4 list-disc">
+              <li>Pre-set system profiles (Admin, Manager, Employee)</li>
+              <li><strong>Active / Inactive Status Management:</strong> Single-click toggle controls to revoke or grant system access instantly for security audits</li>
+              <li>Permission-gated API endpoint access rules</li>
+              <li>Real-time dashboard reflecting vital performance KPIs</li>
+              <li>Interactive tables for sales performance tracking</li>
+              <li>System action logs for modifications and actions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: DISCOUNT LOGIC -->
+      <section id="discount-logic" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">03</span>
+          Discount Control & Workflow Hierarchy
+        </h2>
+        
+        <p class="text-slate-600 text-sm mb-6">
+          The system protects margins with structural system blocks. Any modification beyond the employee's assigned boundary triggers an automated approval request to administrative overrides.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-100">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                <th class="p-4 font-semibold">User Role Group</th>
+                <th class="p-4 font-semibold">Discount Threshold</th>
+                <th class="p-4 font-semibold">Authorized Actions</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 font-bold text-slate-800">Sales Employee</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded bg-amber-50 text-amber-700 border border-amber-200 text-xs font-medium">Exactly 5%</span></td>
+                <td class="p-4 text-slate-600">Generate Drafts, Read-only Products, Create Clients</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 font-bold text-slate-800">Manager</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200 text-xs font-medium">Exactly 10%</span></td>
+                <td class="p-4 text-slate-600">Approve Pending Quotes, Log Stock Intake, Edit Client Masters</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-4 font-bold text-slate-800">System Admin</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded bg-green-50 text-green-700 border border-green-200 text-xs font-medium">Unlimited</span></td>
+                <td class="p-4 text-slate-600">Full Approval Override, System Customization, Delete Actions, Edit Users</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 4: TAX SYSTEM -->
+      <section id="tax-system" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">04</span>
+          Taxation Logic & Pricing Rules
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-5 border border-slate-100 rounded-xl bg-slate-50">
+            <h4 class="font-bold text-slate-950 text-sm mb-2">Automated GST System</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Integrated GST formulas automatically identify IGST, CGST, and SGST based on client addresses and tax profile definitions.</p>
+          </div>
+          <div class="p-5 border border-slate-100 rounded-xl bg-slate-50">
+            <h4 class="font-bold text-slate-950 text-sm mb-2">Dynamic Tax Views</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Outputs clear tax structures on the user interface and on generated quotation files to avoid client verification delays.</p>
+          </div>
+          <div class="p-5 border border-slate-100 rounded-xl bg-slate-50">
+            <h4 class="font-bold text-slate-950 text-sm mb-2">Unified Accounting Outputs</h4>
+            <p class="text-xs text-slate-500 leading-relaxed">Ensures the grand total represents the exact sum of raw pricing structures, operational charges, discounts, and verified taxes.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: TECHNICAL ARCHITECTURE -->
+      <section id="architecture" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">05</span>
+          Technical Stack & Security Framework
+        </h2>
+        
+        <p class="text-slate-600 text-sm mb-6">
+          Designed for speed, data protection, and smooth horizontal expansion as operations expand.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="p-5 border border-slate-200 rounded-xl">
+            <span class="text-xs font-semibold text-brand-600 uppercase">Frontend Engine</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1">Next.js / React</h4>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Fast interfaces, modular UI updates, and an optimized design optimized for cross-platform access.</p>
+          </div>
+
+          <div class="p-5 border border-slate-200 rounded-xl">
+            <span class="text-xs font-semibold text-brand-600 uppercase">Backend API Core</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1">Node.js + NestJS/Express</h4>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Type-safe API frameworks, rapid process loops, and a structured architecture for clean maintenance.</p>
+          </div>
+
+          <div class="p-5 border border-slate-200 rounded-xl">
+            <span class="text-xs font-semibold text-brand-600 uppercase">Database Schema</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1">PostgreSQL / MySQL</h4>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Strict schema enforcement to safeguard financial transactional records and customer configurations.</p>
+          </div>
+
+          <div class="p-5 border border-slate-200 rounded-xl bg-brand-50/10">
+            <span class="text-xs font-semibold text-brand-600 uppercase">Deployment Environments</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1">Staging, UAT & Prod</h4>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Configuration and separation of clean environments: Staging (integration checking), UAT (client validation), and live Production.</p>
+          </div>
+
+          <div class="p-5 border border-slate-200 rounded-xl">
+            <span class="text-xs font-semibold text-brand-600 uppercase">Development Standards</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1">W3C, WCAG & ICT Compliance</h4>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">All code architectures adhere strictly to World Wide Web Consortium (W3C) specs, WCAG accessibility rules, and ICT protocols.</p>
+          </div>
+
+          <div class="p-5 border border-slate-200 rounded-xl">
+            <span class="text-xs font-semibold text-brand-600 uppercase">Document Generation</span>
+            <h4 class="font-bold text-slate-900 text-base mt-1">Dedicated Server PDF</h4>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Clean, beautifully formatted PDFs constructed in real-time on secure container scripts.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: DEVELOPMENT TIMELINE -->
+      <section id="timeline" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">06</span>
+          Project Delivery Roadmap
+        </h2>
+
+        <div class="space-y-4 relative before:absolute before:inset-0 before:left-3.5 before:bg-slate-100 before:w-0.5 my-8">
+          
+          <div class="relative pl-10">
+            <span class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-white ring-2 ring-brand-100"></span>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">Phase 1: Specifications & Requirements Blueprinting</h4>
+              <span class="text-xs text-brand-600 font-semibold bg-brand-50 px-2 py-0.5 rounded">Exactly 5 Days</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Deep analysis of customer workflows, specification documents, validation of dynamic pricing matrices, and database diagram layouts.</p>
+          </div>
+
+          <div class="relative pl-10">
+            <span class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></span>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">Phase 2: UI/UX Wireframes & Component Design</h4>
+              <span class="text-xs text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded">Exactly 8 Days</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">High-fidelity screens representing admin dashboards, quotation builders, user access controls, and print-ready formats adhering to W3C and WCAG standard norms.</p>
+          </div>
+
+          <div class="relative pl-10">
+            <span class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></span>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">Phase 3: Core API Services & Database Framework</h4>
+              <span class="text-xs text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded">Exactly 25 Days</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Building clean API endpoints for data storage, client registration engines with Active/Inactive toggles, dynamic pricing matrices, and stock locks.</p>
+          </div>
+
+          <div class="relative pl-10">
+            <span class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></span>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">Phase 4: Client Portal Interface & UI Integrations</h4>
+              <span class="text-xs text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded">Exactly 20 Days</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Turning visual components into responsive client interfaces, state management integrations, validation controls, and API connections.</p>
+          </div>
+
+          <div class="relative pl-10">
+            <span class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-slate-300 border-4 border-white"></span>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">Phase 5: Environment Testing & Integrity Quality Checks</h4>
+              <span class="text-xs text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded">Exactly 12 Days</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Deployments to Staging and UAT environments, simulated validation load checks, tax logic calculations testing, and user-flow boundary checking.</p>
+          </div>
+
+          <div class="relative pl-10">
+            <span class="absolute left-1.5 top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white ring-2 ring-emerald-100"></span>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="font-bold text-slate-900 text-sm">Phase 6: Live Production Deployment & Handover</h4>
+              <span class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Exactly 5 Days</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1">Live production deployment, automated backup scheduling configuration, active SSL configurations, and user guide deliveries.</p>
+          </div>
+
+        </div>
+
+        <div class="p-4 bg-slate-50 border border-slate-150 rounded-lg flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-600">Total Project Development Target Cycle</span>
+          <span class="text-base font-bold text-slate-900">10 Weeks (70 Calendar Days)</span>
+        </div>
+      </section>
+
+      <!-- SECTION 7: SYSTEM DELIVERABLES -->
+      <section id="deliverables" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">07</span>
+          System Deliverables Checklist
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 border border-slate-100 rounded-xl bg-slate-50/50">
+            <h4 class="font-bold text-slate-900 text-sm mb-3 pb-2 border-b border-slate-100">Applications</h4>
+            <ul class="space-y-2.5 text-xs text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Mobile Responsive Web CRM App</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Admin Dashboard & Staff Configurator</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Active / Inactive Client Director Modules</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Material Quotation Matrix Tool</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Inventory Lock & Deduction Engine</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-6 border border-slate-100 rounded-xl bg-slate-50/50">
+            <h4 class="font-bold text-slate-900 text-sm mb-3 pb-2 border-b border-slate-100">Technical Assets</h4>
+            <ul class="space-y-2.5 text-xs text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Production API Source Code</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Isolated Staging & UAT Code Pipelines</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Database Structural Schema Scripts</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>RBAC Dynamic Route Controls Setup</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Production VM Deployment Setup</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="p-6 border border-slate-100 rounded-xl bg-slate-50/50">
+            <h4 class="font-bold text-slate-900 text-sm mb-3 pb-2 border-b border-slate-100">Documentation</h4>
+            <ul class="space-y-2.5 text-xs text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>W3C & WCAG Standards Audit Sheet</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>User Account Allocation Sheet</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Server Migration & Setup Playbook</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>UAT & Production Handover Files</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                <span>Dynamic Schema Definition Guide</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 8: COST ESTIMATION & PRICING -->
+      <section id="pricing" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">08</span>
+          Project Development Pricing Matrix (Fixed Fee)
+        </h2>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-100 mb-6">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                <th class="p-4 font-semibold">Development Milestone / Work-package</th>
+                <th class="p-4 font-semibold text-right">Fixed Investment (INR)</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">UI/UX Screens, Mobile Responsive Wireframes & System Blueprinting</span>
+                  <p class="text-xs text-slate-500 mt-1">High-fidelity screens built strictly under W3C validation guidelines and WCAG requirements</p>
+                </td>
+                <td class="p-4 text-right font-mono font-bold text-slate-800">₹50,000</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">Frontend Client Core Development</span>
+                  <p class="text-xs text-slate-500 mt-1">Mobile responsive web forms, transaction-level screens, sales dashboard components</p>
+                </td>
+                <td class="p-4 text-right font-mono font-bold text-slate-800">₹1,20,000</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">API Core Development & Database Scalability Architecture</span>
+                  <p class="text-xs text-slate-500 mt-1">Authentication pipelines, transactional tables formatted for seed database distribution, and CRM/ERP data models</p>
+                </td>
+                <td class="p-4 text-right font-mono font-bold text-slate-800">₹1,80,000</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">Database Schema Security & RBAC Configuration</span>
+                  <p class="text-xs text-slate-500 mt-1">User Lifecycle active/inactive state security modules, custom encryption schemas, and route guards</p>
+                </td>
+                <td class="p-4 text-right font-mono font-bold text-slate-800">₹45,000</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">System Integration & Accessibility Validations</span>
+                  <p class="text-xs text-slate-500 mt-1">Rigorous test script executions, layout check under diverse viewports, and WCAG accessibility checklist confirmation</p>
+                </td>
+                <td class="p-4 text-right font-mono font-bold text-slate-800">₹55,000</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4 bg-brand-50/10">
+                  <span class="font-semibold text-brand-700">Implementation, Server Setup & Multi-Environment Deployment</span>
+                  <p class="text-xs text-slate-500 mt-1">Creating and managing isolated development deployment structures: Staging, client-facing UAT, and Live Production environments with active SSL setups</p>
+                </td>
+                <td class="p-4 text-right font-mono font-bold text-brand-700 bg-brand-50/10">₹30,000</td>
+              </tr>
+              <tr class="bg-brand-50/40">
+                <td class="p-4 font-bold text-slate-900">Total Project Development Cost (Fixed Contract)</td>
+                <td class="p-4 text-right font-mono font-black text-brand-600 text-lg">₹4,80,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- STAGE-WISE INVOICING MILESTONES -->
+        <div class="mt-8 bg-slate-50 rounded-xl p-6 border border-slate-150">
+          <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Contract Invoicing Milestones</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-600">
+            <div class="p-4 bg-white border border-slate-200 rounded-lg">
+              <span class="font-mono text-brand-500 font-bold block mb-1">Stage 01 / 15% (₹72,000)</span>
+              <span class="font-semibold text-slate-800 block mb-1">Contract Execution</span>
+              <span>Project initiation, blueprinting, specification sign-off, and staging repository setups.</span>
+            </div>
+            <div class="p-4 bg-white border border-slate-200 rounded-lg">
+              <span class="font-mono text-brand-500 font-bold block mb-1">Stage 02 / 35% (₹1,68,000)</span>
+              <span class="font-semibold text-slate-800 block mb-1">UI & API Delivery</span>
+              <span>Wireframes approval, API core endpoints active, database schematics integrated in Staging.</span>
+            </div>
+            <div class="p-4 bg-white border border-slate-200 rounded-lg">
+              <span class="font-mono text-brand-500 font-bold block mb-1">Stage 03 / 35% (₹1,68,000)</span>
+              <span class="font-semibold text-slate-800 block mb-1">Integration Alpha</span>
+              <span>Frontend connected to API, integrated system deployed to secure UAT server pipeline for client reviews.</span>
+            </div>
+            <div class="p-4 bg-white border border-slate-200 rounded-lg">
+              <span class="font-mono text-brand-500 font-bold block mb-1">Stage 04 / 15% (₹72,000)</span>
+              <span class="font-semibold text-slate-800 block mb-1">Handover & Launch</span>
+              <span>Live production rollout, SSL certificate active, handovers of code documentation and source repositories.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 9: RUNNING COST ESTIMATION -->
+      <section id="running-costs" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">09</span>
+          System Operational Running Costs & AMC
+        </h2>
+        <p class="text-slate-600 text-sm mb-6">
+          The following list displays the exact operational software costs required to run your live system. All third-party software subscriptions will be billed directly to the client accounts to ensure total ownership.
+        </p>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-100 mb-6">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+                <th class="p-4 font-semibold">Infrastructure/External Service</th>
+                <th class="p-4 font-semibold">Fixed Cost (INR)</th>
+                <th class="p-4 font-semibold text-right">Billing Term</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">Linux Virtual Private Server (VPS)</span>
+                  <p class="text-xs text-slate-500 mt-1">Host application server and PostgreSQL database</p>
+                </td>
+                <td class="p-4 font-mono">₹4,000</td>
+                <td class="p-4 text-right text-slate-600">Per Month</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">Domain Registrar Subscription</span>
+                  <p class="text-xs text-slate-500 mt-1">Domain registration, DNS management system</p>
+                </td>
+                <td class="p-4 font-mono">₹1,200</td>
+                <td class="p-4 text-right text-slate-600">Per Year</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">GST Verification & Verification APIs</span>
+                  <p class="text-xs text-emerald-700 font-semibold bg-emerald-50 px-2 py-0.5 rounded inline-block mt-1">Client Direct Procurement</p>
+                  <p class="text-xs text-slate-500 mt-1">Procured, licensed, and registered directly by the client (credentials provided to freelancer for configuration)</p>
+                </td>
+                <td class="p-4 text-slate-500">₹0 <span class="text-xs font-normal block">(Billed directly to Client)</span></td>
+                <td class="p-4 text-right text-slate-600">Billed to Client</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">SMTP Transactional Email Gateway API</span>
+                  <p class="text-xs text-slate-500 mt-1">Outbound emails (quotations, approvals notification, invoices)</p>
+                </td>
+                <td class="p-4 font-mono">₹5,000</td>
+                <td class="p-4 text-right text-slate-600">Per Year</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50 bg-slate-50/50">
+                <td class="p-4">
+                  <span class="font-semibold text-slate-800">SSL Security Encryption Setup</span>
+                  <p class="text-xs text-slate-500 mt-1">Included in first-time development server setup (Let's Encrypt configured with automated monthly cron renewals)</p>
+                </td>
+                <td class="p-4 font-semibold text-emerald-600">₹0 <span class="text-xs font-normal text-slate-500 block">(Included in Setup)</span></td>
+                <td class="p-4 text-right text-slate-600">Lifetime Renewals</td>
+              </tr>
+              <tr class="hover:bg-slate-50/50 bg-emerald-50/20">
+                <td class="p-4">
+                  <span class="font-bold text-emerald-800">First-Year Technical Support &amp; Maintenance</span>
+                  <p class="text-xs text-slate-500 mt-1">Essential coverage for minor system validations, baseline bug fixing, and continuous live monitoring during the initial 12 months post-handover</p>
+                </td>
+                <td class="p-4 font-bold text-emerald-600 font-mono">₹0</td>
+                <td class="p-4 text-right text-emerald-700 font-semibold">Free / Included <span class="text-xs font-normal text-slate-500 block">(First 12 Months)</span></td>
+              </tr>
+              <tr class="bg-brand-50/30">
+                <td class="p-4">
+                  <span class="font-bold text-slate-900">Annual Maintenance Contract (AMC)</span>
+                  <p class="text-xs text-slate-600 mt-1">Applicable from **Year 2 onwards** (representing exactly **20% of the flat project development cost**). This covers strictly **basic technical support** (regular backend library updates, system health monitoring, and resolution of logical bugs). It does not include major additions or workflow expansions.</p>
+                </td>
+                <td class="p-4 font-mono font-bold text-brand-700">₹96,000</td>
+                <td class="p-4 text-right text-brand-700 font-bold">Per Year <span class="text-xs font-normal block text-slate-500">(Billed from Year 2)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 10: OUT OF SCOPE EXCLUSIONS -->
+      <section id="exclusions" class="mt-12 pt-8 border-t border-slate-100">
+        <h2 class="text-xl font-bold text-slate-950 flex items-center gap-3 mb-6">
+          <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-brand-50 text-brand-600 text-xs font-mono">10</span>
+          Scope Exclusions & Phase 2 Vision
+        </h2>
+        <p class="text-slate-600 text-sm mb-6">
+          To maintain an efficient delivery cycle, the following structures are excluded from Phase 1. These items are excellent candidates for a Phase 2 project roadmap:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Native Mobile App Stores Deployment (Web Mobile Responsive is Fully Included)</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Client login / quote checkout portals</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Raw material calculation layers</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Factory floor manufacturing dashboards</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Full-scale double entry bookkeeping</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Live integrated payment gateways</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>Custom-defined on-the-fly roles</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>WhatsApp Business automated workflows</span>
+          </div>
+          <div class="p-4 border border-slate-100 rounded-lg text-slate-600 text-xs flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-400 shrink-0"></span>
+            <span>AI sales forecasting engines</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TERMS OF CONFIRMATION -->
+      <div class="mt-16 pt-12 border-t-2 border-slate-100">
+        <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+          Terms & Scope Confirmation
+        </h4>
+        <p class="text-xs text-slate-500 leading-relaxed mb-4">
+          This document represents the complete fixed functional scope baseline for the CRM Web Application (Phase 1). Any modifications, workflow requirements, or additional integrations requested post-handover that exceed the core functional parameters outlined herein are excluded from the basic Annual Maintenance Contract (AMC) support and will be evaluated strictly under a formal, independent <strong>Change Request (CR)</strong> process with dedicated timelines and pricing metrics.
+        </p>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="mt-16 text-center border-t border-slate-100 pt-6 text-xs text-slate-400">
+        Independent Freelance Delivery &bull; CRM Web Client System Development &bull; 2026
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
